@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>681</width>
+    <height>684</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>pt config</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="project_path_8">
+       <property name="text">
+        <string>  Project Path：</string>
+       </property>
+       <property name="buddy">
+        <cstring>lineEdit_11</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_11"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="project_path_18">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Input config:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="designer_name_3">
+          <property name="text">
+           <string>  Design Name:    </string>
+          </property>
+          <property name="buddy">
+           <cstring>designer_name_4</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="generate_ice_3">
+          <property name="text">
+           <string>  Generate_ice:</string>
+          </property>
+          <property name="buddy">
+           <cstring>generate_ice_4</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="6">
+         <widget class="QSpinBox" name="generate_redhawk_4">
+          <property name="maximum">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QSpinBox" name="generate_ice_4">
+          <property name="maximum">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="designer_name_4">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>23</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="generate_redhawk_3">
+          <property name="text">
+           <string>  Generate_redhawk:</string>
+          </property>
+          <property name="buddy">
+           <cstring>generate_redhawk_4</cstring>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="spef_dir_3">
+            <property name="text">
+             <string>  SpefDir:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_4</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="designer_netdir_3">
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text">
+             <string>  Designer_netDir:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_5</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="verilog_file_3">
+            <property name="text">
+             <string>  Verilog_file:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_6</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="func_sdcdir_3">
+            <property name="text">
+             <string>  Func_sdcDir:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_7</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="shift_sdcdir_3">
+            <property name="text">
+             <string>  Shift_sdcDir:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_8</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="capture_sdcdir_3">
+            <property name="text">
+             <string>  Capture_sdcDir:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_9</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="sdf_gen_sdcdir_3">
+            <property name="text">
+             <string>  Sdf_gen_sdcDir:</string>
+            </property>
+            <property name="buddy">
+             <cstring>spef_dir_10</cstring>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="spef_dir_4"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="spef_dir_5"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="spef_dir_6"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="spef_dir_7"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="spef_dir_8"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="spef_dir_9"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="spef_dir_10"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="project_path_11">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="project_path_12">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="project_path_13">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="project_path_14">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="project_path_15">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="project_path_16">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="project_path_17">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Setup config:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <item>
+         <widget class="QLabel" name="lib_dir_4">
+          <property name="text">
+           <string>  lib_dir:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="lib_dir_6">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QListView" name="listView"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="corner_2">
+        <property name="text">
+         <string>  corner：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="all_2">
+        <property name="text">
+         <string>all</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="wcl_2">
+          <property name="text">
+           <string>wcl</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="wc_2">
+          <property name="text">
+           <string>wc</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="lt_2">
+          <property name="text">
+           <string>lt</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="ml_2">
+          <property name="text">
+           <string>ml</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="tt_2">
+          <property name="text">
+           <string>tt</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_11</tabstop>
+  <tabstop>project_path_18</tabstop>
+  <tabstop>designer_name_4</tabstop>
+  <tabstop>generate_ice_4</tabstop>
+  <tabstop>generate_redhawk_4</tabstop>
+  <tabstop>spef_dir_4</tabstop>
+  <tabstop>project_path_11</tabstop>
+  <tabstop>spef_dir_5</tabstop>
+  <tabstop>project_path_12</tabstop>
+  <tabstop>spef_dir_6</tabstop>
+  <tabstop>project_path_13</tabstop>
+  <tabstop>spef_dir_7</tabstop>
+  <tabstop>project_path_14</tabstop>
+  <tabstop>spef_dir_8</tabstop>
+  <tabstop>project_path_15</tabstop>
+  <tabstop>spef_dir_9</tabstop>
+  <tabstop>project_path_16</tabstop>
+  <tabstop>spef_dir_10</tabstop>
+  <tabstop>project_path_17</tabstop>
+  <tabstop>lib_dir_6</tabstop>
+  <tabstop>all_2</tabstop>
+  <tabstop>wcl_2</tabstop>
+  <tabstop>wc_2</tabstop>
+  <tabstop>lt_2</tabstop>
+  <tabstop>ml_2</tabstop>
+  <tabstop>tt_2</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>bindlist()</slot>
+ </slots>
+</ui>

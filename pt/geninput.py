@@ -31,7 +31,7 @@ class input:
 
         return lines + '\n' + '}'
 
-    def create_input(self):
+    def write_input(self):
         setup_path = self.proj_path + '/input.tcl'
         with open(setup_path,'w') as f:
             print(type(self.arg[0]))
@@ -52,4 +52,4 @@ if __name__ == '__main__':
     haha = {'DESIGN':1,'generate_ice':2,'generate_redhawk':3,'verilog_file':4,'spefDir':5,'sdcDir':6}
     hehe = {'a':1,'b':2,'c':3}
     a = input(proj_path = '/home/wzq/haha', arg_dict = haha,sdc_arg=hehe)
-    a.create_input()
+    a.write_input()

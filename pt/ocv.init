@@ -1,0 +1,39 @@
+
+proc ocvSetup {} {
+
+     set_timing_derate -late -cell_check 1.0
+
+     set_timing_derate -early -clock -cell_delay 0.925
+     set_timing_derate -early -clock -net_delay  0.925
+
+     set_timing_derate -late  -clock -cell_delay 1.0
+     set_timing_derate -late  -clock -net_delay  1.0
+     set_timing_derate -late  -data  -cell_delay 1.0
+     set_timing_derate -late  -data  -net_delay  1.0
+}
+
+proc ocvHold {} {
+
+     set_timing_derate -early -cell_check 1.0
+
+     set_timing_derate -early -clock -cell_delay 1.0
+     set_timing_derate -early -clock -net_delay  1.0
+     set_timing_derate -early -data  -cell_delay 1.0
+     set_timing_derate -early -data  -net_delay  1.0
+
+     set_timing_derate -late  -clock -cell_delay 1.12
+     set_timing_derate -late  -clock -net_delay  1.12
+}
+
+proc ocvReset {} {
+
+     set_timing_derate -early -cell_check 1.0
+
+     set_timing_derate -early -clock -cell_delay 1.0
+     set_timing_derate -early -clock -net_delay  1.0
+     set_timing_derate -early -data  -cell_delay 1.0
+     set_timing_derate -early -data  -net_delay  1.0
+
+     set_timing_derate -late  -clock -cell_delay 1.0
+     set_timing_derate -late  -clock -net_delay  1.0
+}

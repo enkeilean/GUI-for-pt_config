@@ -127,11 +127,11 @@ class input(input_configx2.Ui_Dialog):
     def create_input(self):
         self.designeName = self.designeName_lineEdit.text()
         if self.projDir == '' or self.spefDir == '' or self.mode == '' or self.sdc_files == '':
-            print(self.projDir)
-            print(self.spefDir)
-            print(self.mode)
-            print(self.sdc_files)
-            print(self.designeName)
+            # print(self.projDir)
+            # print(self.spefDir)
+            # print(self.mode)
+            # print(self.sdc_files)
+            # print(self.designeName)
             QMessageBox.information(
                 None, 'Tips', 'Please set all  args!', QMessageBox.Ok)
         elif len(self.mode) != len(self.sdc_files):
@@ -157,8 +157,8 @@ class input(input_configx2.Ui_Dialog):
             self.dict_arg['sdcDir'] = self.sdcDir
             self.sdcArg = dict(zip(self.mode,self.sdc_files))
             self.sdc_arg = dict(zip(self.mode,self.sdc_files))
-            input = geninput.input(proj_path = self.projDir, arg_dict = self.dict_arg,sdc_arg=self.sdc_arg)
-            input.create_input()
+            inputFile = geninput.input(proj_path = self.projDir, arg_dict = self.dict_arg,sdc_arg=self.sdc_arg)
+            inputFile.write_input()
             QCoreApplication.instance().quit()
 
     def exit(self):
@@ -166,20 +166,6 @@ class input(input_configx2.Ui_Dialog):
             None, 'Tips', 'Are you sure exit?!', QMessageBox.Yes|QMessageBox.No,QMessageBox.No)
         if select == QMessageBox.Yes:
             QCoreApplication.instance().quit()
-
-    # def rn_sdc_file(self, item, *haha):
-    #     """ rm the path of lib that unwant """
-    #     print(self.lib_path)
-    #     select = QMessageBox.information(
-    #         None,
-    #         'Message',
-    #         'Are you sure you want to rename the sdc file',
-    #         QMessageBox.Yes | QMessageBox.No)
-    #     if select == QMessageBox.Yes:
-    #         self.lib_path = ''
-    #         self.lib_dir_line.clear()
-    #     print(self.lib_path)
-
 
 if __name__ == '__main__':
 

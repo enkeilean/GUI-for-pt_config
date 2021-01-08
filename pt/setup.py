@@ -9,11 +9,11 @@ import gensetup
 
 class demo(setup_config.Ui_Dialog):
     def __init__(self, Dialog):
-        self.libDir = ''
         super().setupUi(Dialog)
-        self.initUI()
+        self.libDir = ''
         self.corner = {}
         self.projDir = ''
+        self.initUI()
 
 
     def initUI(self):

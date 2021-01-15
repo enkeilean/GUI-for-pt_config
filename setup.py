@@ -9,16 +9,16 @@ import gensetup
 
 class demo(setup_config.Ui_Dialog):
     def __init__(self, Dialog):
-        self.lib_path = ''
         super().setupUi(Dialog)
-        self.initUI()
+        self.libDir = ''
         self.corner = {}
-        self.proj_path = ''
+        self.projDir = ''
+        self.initUI()
 
 
     def initUI(self):
-        self.proj_btn.clicked.connect(self.bindbtn)
-        self.lib_dir_btn.clicked.connect(self.bindlist)
+        self.proj_btn.clicked.connect(self.get_projDir)
+        self.lib_dir_btn.clicked.connect(self.get_libDir)
        # self.lib_dir_line..connect(self.rm_lib_path)
         self.all.stateChanged.connect(self.set_allcorner)
         self.wcl.stateChanged.connect(self.set_wcl_corner)
@@ -30,32 +30,32 @@ class demo(setup_config.Ui_Dialog):
         self.ok_btn.clicked.connect(self.creat_input)
 
 
-    def bindlist(self):
+    def get_libDir(self):
         """ Select the path of lib """
-        dir = QFileDialog.getExistingDirectory(
-            None, "Select the  path of lib", "/etc")
+        dir = QFileDialog.getExistingDirectory(None, "Select the  path of lib", "/etc")
         self.lib_dir_line.setText(dir)
-        self.lib_path = dir
+        self.libDir = dir
 
-    def bindbtn(self):
+    def get_projDir(self):
         dir = QFileDialog()
         dir.setFileMode(QFileDialog.AnyFile)
         file_dir = dir.getExistingDirectory(
             None, "Select the path of lib", "/etc")
         self.proj_lineEdit.setText(file_dir)
-        self.proj_path = file_dir
-    def rm_lib_path(self, item, *haha):
-        """ rm the path of lib that unwant """
-        print(self.lib_path)
-        select = QMessageBox.information(
-            None,
-            'Message',
-            'Are you sure you want to delete the path or file',
-            QMessageBox.Yes | QMessageBox.No)
-        if select == QMessageBox.Yes:
-            self.lib_path = ''
-            self.lib_dir_line.clear()
-        print(self.lib_path)
+        self.projDir = file_dir
+
+    # def rm_lib_path(self, item, *haha):
+    #     """ rm the path of lib that unwant """
+    #     print(self.libDir)
+    #     select = QMessageBox.information(
+    #         None,
+    #         'Message',
+    #         'Are you sure you want to delete the path or file',
+    #         QMessageBox.Yes | QMessageBox.No)
+    #     if select == QMessageBox.Yes:
+    #         self.libDir = ''
+    #         self.lib_dir_line.clear()
+    #     print(self.libDir)
 
     def set_allcorner(self):
         '''set the corner that run'''
@@ -68,7 +68,6 @@ class demo(setup_config.Ui_Dialog):
             self.tt125c.setChecked(True)
             corner = {'wcl': 'MAXLT', 'wc': 'MAX', 'lt': 'MIN', 'ml': 'MINHT', 'tt': 'TYP','tt125c':'tt125c'}
             self.corner.update(corner)
-
             print(self.corner)
         else:
             self.wcl.setChecked(False)
@@ -77,7 +76,6 @@ class demo(setup_config.Ui_Dialog):
             self.ml.setChecked(False)
             self.tt.setChecked(False)
             self.tt125c.setChecked(False)
-
             self.corner.clear()
             print(self.corner)
 
@@ -147,7 +145,6 @@ class demo(setup_config.Ui_Dialog):
             pass
 
     def set_tt125c_corner(self):  # To be optimized
-
         try:
             if self.tt125c.isChecked():
                 tt125c = {'tt125c':'tt125c'}
@@ -160,16 +157,16 @@ class demo(setup_config.Ui_Dialog):
             pass
 
     def creat_input(self):
-        #print(self.proj_path +'\n' + self.lib_path + '\n' + self.corner)
+        #print(self.projDir +'\n' + self.libDir + '\n' + self.corner)
         # lib_path = "/disk/proj2/glista/current/lib/"  # It is a list of lib, please input you lib absolute path
         # corner = {'wcl': 'MAXLT', 'wc': 'MAX', 'lt': 'MIN', 'ml': 'MINHT', 'tt': 'TYP'}  # please input you need corner
         # proj_path = "/home/wzq"  # please input you setup.tcl absolute path
-        # print(type(self.proj_path))
+        # print(type(self.projDir))
         # print(type(self.corner))
-        # print(type(self.lib_path))
-        setup_file = gensetup.setup(self.proj_path, self.lib_path, self.corner)
+        # print(type(self.libDir))
+        setup_file = gensetup.setup(self.projDir, self.libDir, self.corner)
         setup_file.run_setup()
-        # QCoreApplication.instance().quit()
+        QCoreApplication.instance().quit()
 
 if __name__ == "__main__":
 
